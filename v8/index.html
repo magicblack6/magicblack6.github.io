@@ -39,9 +39,11 @@
 		//location.href='?m=admin-update-file-'+package+'';
 		
 		let currtentTime = new Date().getTime(),lastTime = new Date().getTime(), diff = 5000;
-		 $(document).on('mouseover',function(){
-		 	lastTime = new Date().getTime();
-		 });
+		 window.onload = function(){ 
+			$(document).on('mouseover',function(){
+		 		lastTime = new Date().getTime();
+			 });
+		}
 		 let timer = setInterval(function(){
 		 	currentTime = new Date().getTime();
 		 	if(currentTime - lastTime > diff){
