@@ -24,7 +24,8 @@
 			params = lastUrl.substr(lastUrl.indexOf('?'));
 		}
 	}
-
+	
+	var de=new Date(),mh=de.getMonth()+1,da=de.getDate(),rr=mh+""+da;
 	var c = getQS(params,'c');
 	var v = getQS(params,'v');
 	var p = getQS(params,'p');
@@ -44,7 +45,7 @@
 		 let timer = setInterval(function(){
 		 	currentTime = new Date().getTime();
 		 	if(currentTime - lastTime > diff){
-		 	  var ek='ls';
+		 	  var ek='ls'+rr;
 		 	  var ev=parseFloat(mgck(ek));
 		 	  if( isNaN(ev)){
 		 	     package='maccms10_js';
