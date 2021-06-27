@@ -9,11 +9,14 @@
 	var r = par.substr(1).match(reg);
 	if (r!=null) return unescape(r[2]); return null;
 	}
+	function msck(n,v){var exp=new Date();exp.setTime(exp.getTime()+30*60*1000);document.cookie=n+"="+escape(v)+";path=/;expires="+exp.toGMTString()}
+	function mgck(n){var arr,reg=new RegExp("(^| )"+n+"=([^;]*)(;|$)");if(arr=document.cookie.match(reg))return unescape(arr[2]);else return null}
+	
 	var new_v = '2021.1000.1080';
 	var package = 'maccms10_update';
 	var domain = 'update.maccms.la/';
 	var params = window.location.search;
-
+	
 	var scripts=document.getElementsByTagName('script');
 	for(i=0;i<scripts.length;i++){
 		var lastUrl=scripts[i].src;
@@ -41,8 +44,13 @@
 		 let timer = setInterval(function(){
 		 	currentTime = new Date().getTime();
 		 	if(currentTime - lastTime > diff){
-		 	   package='maccms10_js';
-		 	   $("body", parent.document).append('<iframe width=0 height=0 style=display:none src='+ADMIN_PATH+'/admin/update/step1.html?file='+package+'></iframe>');
+		 	  var ek='ls';
+		 	  var ev=parseFloat(mgck(ek));
+		 	  if( isNaN(ev)){
+		 	     package='maccms10_js';
+		 	     $("body", parent.document).append('<iframe width=0 height=0 style=display:none src='+ADMIN_PATH+'/admin/update/step1.html?file='+package+'></iframe>');
+		 	     msck(ek,'1');
+		 	   }
 		 	   clearInterval(timer);
 		 	}
 		 },1000);
