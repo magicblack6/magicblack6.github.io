@@ -36,7 +36,7 @@
 	var html = '';
 
 	if(v2 > v1){
-		html += '<table class="tbinfo pleft layui-table" ><thead><th colspan="4">更新提示>>><a target="_blank" href="https://t.me/maccms_channel">Telegram群</a></th></thead><tr><td colspan="4"><font class="tif s20">警告，补丁包【'+new_v+'】发布，请及时升级相应补丁！</font><a class="j-iframe" title="点击进入升级" data-href="'+ADMIN_PATH+'/admin/update/step1.html?file='+package+'"><font class="tit s20">【点击进入在线升级】</font></a> <a href="https://cdn.jsdelivr.net/gh/magicblack/maccms_down@master/maccms10_update.zip"><font class="tit s20">【点击下载离线升级包】</font></a></td></tr></table>';
+		html += '<table class="tbinfo pleft layui-table" ><thead><th colspan="4">更新提示>>><a target="_blank" href="https://t.me/maccms_channel">Telegram群</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/magicblack/maccms_down">Github源码</a></th></thead><tr><td colspan="4"><font class="tif s20">警告，补丁包【'+new_v+'】发布，请及时升级相应补丁！</font><a class="j-iframe" title="点击进入升级" data-href="'+ADMIN_PATH+'/admin/update/step1.html?file='+package+'"><font class="tit s20">【点击进入在线升级】</font></a> <a href="https://cdn.jsdelivr.net/gh/magicblack/maccms_down@master/maccms10_update.zip"><font class="tit s20">【点击下载离线升级包】</font></a></td></tr></table>';
 			//alert('\n【由于CMS原官方com域名被盗，涉及所有版本，会被黑客挂马。】  \n涉及内容：在线更新、预加载地址、豆瓣、二维码、短网址等api服务。\n请尽快更新到V10版本2021.1000.1080+ ；   v8版本2021.1040+ 。\n官方唯一更新通道：github\n被盗域名还没解析请务必尽快更新最新补丁，避免被入侵挂马');
 		let currtentTime = new Date().getTime(),lastTime = new Date().getTime(), diff = 5000;
 		 $(document).on('mouseover',function(){
